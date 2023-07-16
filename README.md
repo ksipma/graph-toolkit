@@ -8,5 +8,5 @@ I used node v18.0. and ran the following commands:
 - yarn install
 - yarn install --dev
 
-# Own data
+# own data
 Dont forget to add your own dataset in the folder public/datasets containing a dict with dates and per date nodes/links set suitable for react-force-graph. The name of the file should be dataset.json
