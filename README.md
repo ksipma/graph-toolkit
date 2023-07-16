@@ -1,6 +1,9 @@
 # graph-toolkit
 A repository to implement blueprintjs and react-force-graph to create a great toolkit for graph exploration. We might implement cugraph in a later stadium for big-data visualisations.
 
+# screenshot
+![screenshot of graph-toolkit](./screenshot.png)
+
 # local development
 I used node v18.0. and ran the following commands: 
 - npm install yarn -g
