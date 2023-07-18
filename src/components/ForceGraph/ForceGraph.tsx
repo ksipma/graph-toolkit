@@ -18,6 +18,7 @@ export class ForceGraph extends Component<ForceGraphProps, ForceGraphState> {
     constructor(props: ForceGraphProps) {
         super(props);
         this.state = {
+            data: {},
             height: 100,
             width: 100,
             graphData: { nodes: [], links: [] },
@@ -46,7 +47,7 @@ export class ForceGraph extends Component<ForceGraphProps, ForceGraphState> {
         this.setState({ visibleNodes: nodes });
     }
 
-    public static getDerivedStateFromProps = (props, state) => {
+    public static getDerivedStateFromProps = (props: ForceGraphProps, state: ForceGraphState) => {
         let nodes: any[] = [];
         let links: any[] = [];
         let visibleNodes: string[] = [];

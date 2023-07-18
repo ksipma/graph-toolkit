@@ -3,7 +3,7 @@ import { RangeSlider, NumberRange, Button, ButtonGroup, Tooltip } from "@bluepri
 
 interface TimeSliderProps {
     dates: string[],
-    onDateChange: (dates: string[]) => void[]
+    onDateChange: (dates: string[]) => void
 }
 
 interface TimeSliderState {
@@ -110,7 +110,7 @@ export class TimeSlider extends Component<TimeSliderProps, TimeSliderState> {
         const self = this;
         const interval = setInterval(function () {
             if (self.state.activatePlay) {
-                let newRange = [self.state.sliderRange[0] + self.state.sliderDragSize, self.state.sliderRange[1] + self.state.sliderDragSize];
+                let newRange: NumberRange = [self.state.sliderRange[0] + self.state.sliderDragSize, self.state.sliderRange[1] + self.state.sliderDragSize];
 
 
                 // magic if the right drag goes further then the max
@@ -158,7 +158,7 @@ export class TimeSlider extends Component<TimeSliderProps, TimeSliderState> {
     }
 
     //this listener will listen to changes in the datetime selection, if changes occur, we reset the component to the new values
-    public static getDerivedStateFromProps = (props, state) => {
+    public static getDerivedStateFromProps = (props: TimeSliderProps, state: TimeSliderState) => {
         if (props.dates !== state.dates) {
             return {
                 dates: props.dates,
